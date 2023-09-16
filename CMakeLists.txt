@@ -3,4 +3,6 @@ project(tasks C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(tasks main.c)
+add_executable(tasks main.c
+        models/task/Task.h
+        models/task/Task.c)
