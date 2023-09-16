@@ -1,0 +1,3 @@
+B:/www/github/c/tasks/cmake-build-debug/CMakeFiles/tasks.dir
+B:/www/github/c/tasks/cmake-build-debug/CMakeFiles/edit_cache.dir
+B:/www/github/c/tasks/cmake-build-debug/CMakeFiles/rebuild_cache.dir
