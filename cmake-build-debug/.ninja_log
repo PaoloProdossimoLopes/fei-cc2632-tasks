@@ -15,3 +15,6 @@
 2	86	7166610927534189	CMakeFiles/tasks.dir/models/task/Task.c.obj	a23fa89dabd61c39
 6	98	7166610927664216	CMakeFiles/tasks.dir/main.c.obj	9a2de5948db6327f
 98	189	7166610928544177	tasks.exe	6b46b6f75edce9e
+5	68	7166614121460804	CMakeFiles/tasks.dir/core/create_task.c.obj	1c9c3200a3739802
+1	71	7166614121490816	CMakeFiles/tasks.dir/helpers/helpers.c.obj	5c76b5b49793666e
+71	157	7166614122310813	tasks.exe	6b46b6f75edce9e

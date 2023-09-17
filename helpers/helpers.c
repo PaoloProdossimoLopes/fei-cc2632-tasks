@@ -10,8 +10,10 @@ int read_int(char *message) {
     int input;
     printf("%s", message);
     int status = scanf("%d", &input);
-    if (status < 0)
+    if (status < 0) {
+        printf(":: ERROR :: Fails on read input value");
         return status;
+    }
     return input;
 }
 
