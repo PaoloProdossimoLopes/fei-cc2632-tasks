@@ -5,7 +5,8 @@
 
 #include "models/task/Task.h"
 #include "helpers/helpers.h"
-#include "core/create_task.h"
+#include "core/create/create_task.h"
+#include "core/list/list_task.h"
 
 #define LIST_TASKS_OPTION 1
 #define CREATE_TASKS_OPTION 2
@@ -25,9 +26,7 @@ int main() {
         const int input = read_int("\nWhat you want to do? ");
 
         if (input == LIST_TASKS_OPTION) {
-            Task all[TOTAL_TASKS];
-            read_file(all);
-            print_tasks(all, count);
+            list_tasks(count);
         } else if (input == CREATE_TASKS_OPTION) {
             const int task_priority = read_int("Choose the task priority: ");
 
