@@ -4,27 +4,35 @@
 #include <string.h>
 
 #include "models/task/Task.h"
-
-int read_int(char *message) {
-    int input;
-    printf("%s", message);
-    int status = scanf("%d", &input);
-    if (status < 0)
-        return status;
-    return input;
-}
-
-void read_str(char *message, char *str) {
-    fflush(stdin);
-    printf("%s", message);
-    fgets(str, sizeof(str), stdin);
-    str[strlen(str) - 1] = '\0';
-}
+#include "helpers/helpers.h"
 
 void generate_menu() {
     printf("::::::::: MENU :::::::::\n");
     printf(":: 1 - Create task\n");
     printf("::::::::::::::::::::::::\n");
+}
+
+#define FILE_NAME "task"
+#define FILE_NOT_FOUND_ERROR ":: ERROR :: File not found\n"
+
+void write_file(const Task *task) {
+    FILE *file = fopen(FILE_NAME, "wb");
+    if (!file) {
+        printf("%s", FILE_NOT_FOUND_ERROR);
+        exit(-1);
+    }
+    fwrite(task, sizeof(Task), 1, file);
+    fclose(file);
+}
+
+void read_file(Task *task) {
+    FILE *file = fopen(FILE_NAME, "rb");
+    if (!file) {
+        printf("%s", FILE_NOT_FOUND_ERROR);
+        exit(-1);
+    }
+    fread(task, sizeof(Task), 1, file);
+    fclose(file);
 }
 
 int main() {
@@ -37,33 +45,21 @@ int main() {
         if (is_create_menu_option) {
             const int task_priority = read_int("Choose the task priority: ");
 
-            char task_description[100];
+            char task_description[TASK_DESCRIPTION_SIZE];
             read_str("Choose the task description: ", task_description);
 
-            char task_category[100];
+            char task_category[TASK_CATEGORY_SIZE];
             read_str("Choose the task category: ", task_category);
 
-            Task *task = init_task(task_priority, task_description, task_category);
+            const Task *task = init_task(task_priority, task_description, task_category);
             if (!task) exit(-1);
 
-            FILE *file = fopen("tasks.json", "w");
-            if (!file) {
-                printf(":: ERROR :: File not found\n");
-                exit(-1);
-            }
+            write_file(task);
 
-            fprintf(file, "{");
-            fprintf(file, "\"tasks\": [");
-            fprintf(file, "{");
-            fprintf(file, "\"priority\": %d,", task->priority);
-            fprintf(file, "\"description\": \"%s\",", task->description);
-            fprintf(file, "\"category\": \"%s\"", task->category);
-            fprintf(file, "}");
-            fprintf(file, "]");
-            fprintf(file, "}");
+            Task registered_tasks;
+            read_file(&registered_tasks);
 
-            fclose(file);
-
+            printf("DESCRICAO: %s\n", registered_tasks.description);
             printf("Task was added successfully!\n");
         } else {
             printf(":: ERROR :: Choose a valid option, try again\n");

@@ -61,6 +61,12 @@ build CMakeFiles/tasks.dir/models/task/Task.c.obj: C_COMPILER__tasks_unscanned_D
   OBJECT_DIR = CMakeFiles\tasks.dir
   OBJECT_FILE_DIR = CMakeFiles\tasks.dir\models\task
 
+build CMakeFiles/tasks.dir/helpers/helpers.c.obj: C_COMPILER__tasks_unscanned_Debug B$:/www/github/c/tasks/helpers/helpers.c || cmake_object_order_depends_target_tasks
+  DEP_FILE = CMakeFiles\tasks.dir\helpers\helpers.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\tasks.dir
+  OBJECT_FILE_DIR = CMakeFiles\tasks.dir\helpers
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target tasks
@@ -69,7 +75,7 @@ build CMakeFiles/tasks.dir/models/task/Task.c.obj: C_COMPILER__tasks_unscanned_D
 #############################################
 # Link the executable tasks.exe
 
-build tasks.exe: C_EXECUTABLE_LINKER__tasks_Debug CMakeFiles/tasks.dir/main.c.obj CMakeFiles/tasks.dir/models/task/Task.c.obj
+build tasks.exe: C_EXECUTABLE_LINKER__tasks_Debug CMakeFiles/tasks.dir/main.c.obj CMakeFiles/tasks.dir/models/task/Task.c.obj CMakeFiles/tasks.dir/helpers/helpers.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\tasks.dir
