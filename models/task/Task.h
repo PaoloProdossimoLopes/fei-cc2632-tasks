@@ -5,6 +5,9 @@
 #ifndef TASKS_TASK_H
 #define TASKS_TASK_H
 
+#define TASK_DESCRIPTION_SIZE 300
+#define TASK_CATEGORY_SIZE 100
+
 typedef struct Task {
     int priority;
     char *description;

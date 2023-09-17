@@ -6,6 +6,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #define LOWER_BOUND 0
 #define UPPER_BOUND 10
@@ -16,7 +17,19 @@ int is_valid_priority(int priority) {
 
 Task *init_task(int priority, char *description, char *category) {
     if (!is_valid_priority(priority)) {
-        printf(":: ERROR :: The task received an invalid value, must be between %d and %d", LOWER_BOUND, UPPER_BOUND);
+        printf(":: ERROR :: The task received an invalid priority value, must be between %d and %d", LOWER_BOUND, UPPER_BOUND);
+        return NULL;
+    }
+
+    const int is_valid_description_size = strlen(description) < TASK_DESCRIPTION_SIZE;
+    if (!is_valid_description_size) {
+        printf(":: ERROR :: The task received an invalid description size, must be lower than %d characters", TASK_DESCRIPTION_SIZE);
+        return NULL;
+    }
+
+    const int is_valid_category_size = strlen(category) < TASK_CATEGORY_SIZE;
+    if (!is_valid_category_size) {
+        printf(":: ERROR :: The task received an invalid category size, must be lower than %d characters", TASK_CATEGORY_SIZE);
         return NULL;
     }
 
