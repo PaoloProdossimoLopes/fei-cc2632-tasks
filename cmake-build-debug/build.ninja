@@ -67,11 +67,17 @@ build CMakeFiles/tasks.dir/helpers/helpers.c.obj: C_COMPILER__tasks_unscanned_De
   OBJECT_DIR = CMakeFiles\tasks.dir
   OBJECT_FILE_DIR = CMakeFiles\tasks.dir\helpers
 
-build CMakeFiles/tasks.dir/core/create_task.c.obj: C_COMPILER__tasks_unscanned_Debug B$:/www/github/c/tasks/core/create_task.c || cmake_object_order_depends_target_tasks
-  DEP_FILE = CMakeFiles\tasks.dir\core\create_task.c.obj.d
+build CMakeFiles/tasks.dir/core/create/create_task.c.obj: C_COMPILER__tasks_unscanned_Debug B$:/www/github/c/tasks/core/create/create_task.c || cmake_object_order_depends_target_tasks
+  DEP_FILE = CMakeFiles\tasks.dir\core\create\create_task.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\tasks.dir
-  OBJECT_FILE_DIR = CMakeFiles\tasks.dir\core
+  OBJECT_FILE_DIR = CMakeFiles\tasks.dir\core\create
+
+build CMakeFiles/tasks.dir/core/list/list_tasks.c.obj: C_COMPILER__tasks_unscanned_Debug B$:/www/github/c/tasks/core/list/list_tasks.c || cmake_object_order_depends_target_tasks
+  DEP_FILE = CMakeFiles\tasks.dir\core\list\list_tasks.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\tasks.dir
+  OBJECT_FILE_DIR = CMakeFiles\tasks.dir\core\list
 
 
 # =============================================================================
@@ -81,7 +87,7 @@ build CMakeFiles/tasks.dir/core/create_task.c.obj: C_COMPILER__tasks_unscanned_D
 #############################################
 # Link the executable tasks.exe
 
-build tasks.exe: C_EXECUTABLE_LINKER__tasks_Debug CMakeFiles/tasks.dir/main.c.obj CMakeFiles/tasks.dir/models/task/Task.c.obj CMakeFiles/tasks.dir/helpers/helpers.c.obj CMakeFiles/tasks.dir/core/create_task.c.obj
+build tasks.exe: C_EXECUTABLE_LINKER__tasks_Debug CMakeFiles/tasks.dir/main.c.obj CMakeFiles/tasks.dir/models/task/Task.c.obj CMakeFiles/tasks.dir/helpers/helpers.c.obj CMakeFiles/tasks.dir/core/create/create_task.c.obj CMakeFiles/tasks.dir/core/list/list_tasks.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\tasks.dir

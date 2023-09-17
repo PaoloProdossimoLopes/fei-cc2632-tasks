@@ -4,8 +4,8 @@
 
 #include <stdio.h>
 
-#include "../models/task/Task.h"
-#include "../helpers/helpers.h"
+#include "../../models/task/Task.h"
+#include "../../helpers/helpers.h"
 
 int create_task(int priority, const char description[], const char category[], int accumulator) {
     const Task *task = init_task(priority, description, category);
@@ -40,8 +40,6 @@ int create_task(int priority, const char description[], const char category[], i
             return read_status;
         }
     }
-
-    print_tasks(all_tasks, accumulator);
 
     printf("\n");
     printf("Task was added successfully!\n");
