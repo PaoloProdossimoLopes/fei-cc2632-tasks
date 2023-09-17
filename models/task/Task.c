@@ -41,12 +41,17 @@ Task *init_task(int priority, const char description[], const char category[]) {
 }
 
 void print_tasks(Task tasks[], int size) {
+    if (size == 0) {
+        printf("\nOps, your list of tasks is empty, try to create a task before\n\n");
+        return;
+    }
+
     printf("\n");
-    for (int i=0; i <= size; i++) {
-        printf("TASK ID: %d\n", i);
+    for (int i=0; i < size; i++) {
+        printf(":: TASK ID: %d ::\n", i);
         printf("TASK PRIORITY: %d\n",  tasks[i].priority);
         printf("TASK DESCRIPTION: %s\n", tasks[i].description);
-        printf("TASK CATEGORY: %s\n", tasks[i].category);
+        printf("TASK CATEGORY: %s\n\n", tasks[i].category);
     }
     printf("\n");
 }

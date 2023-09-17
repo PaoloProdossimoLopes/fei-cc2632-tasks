@@ -41,8 +41,6 @@ int create_task(int priority, const char description[], const char category[], i
         }
     }
 
-    print_tasks(all_tasks, accumulator);
-
     printf("\n");
     printf("Task was added successfully!\n");
     return 0;

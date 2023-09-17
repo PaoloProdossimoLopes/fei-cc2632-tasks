@@ -7,6 +7,7 @@
 #include "../models/task/Task.h"
 
 int read_int(char *message) {
+    fflush(stdin);
     int input;
     printf("%s", message);
     int status = scanf("%d", &input);

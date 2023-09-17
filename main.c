@@ -7,9 +7,13 @@
 #include "helpers/helpers.h"
 #include "core/create_task.h"
 
+#define LIST_TASKS_OPTION 1
+#define CREATE_TASKS_OPTION 2
+
 void generate_menu() {
     printf("::::::::: MENU :::::::::\n");
-    printf(":: 1 - Create task\n");
+    printf(":: %d - List tasks\n", LIST_TASKS_OPTION);
+    printf(":: %d - Create task\n", CREATE_TASKS_OPTION);
     printf("::::::::::::::::::::::::\n");
 }
 
@@ -20,8 +24,11 @@ int main() {
 
         const int input = read_int("\nWhat you want to do? ");
 
-        const int is_create_menu_option = input == 1;
-        if (is_create_menu_option) {
+        if (input == LIST_TASKS_OPTION) {
+            Task all[TOTAL_TASKS];
+            read_file(all);
+            print_tasks(all, count);
+        } else if (input == CREATE_TASKS_OPTION) {
             const int task_priority = read_int("Choose the task priority: ");
 
             char task_description[TASK_DESCRIPTION_SIZE];
