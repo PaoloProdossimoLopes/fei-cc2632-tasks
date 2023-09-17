@@ -1,0 +1,20 @@
+# ninja log v5
+6	82	7166600758599041	CMakeFiles/tasks.dir/main.c.obj	9a2de5948db6327f
+0	7	0	clean	623e9aeeaf8cdd87
+2	72	7166572371195049	CMakeFiles/tasks.dir/helpers/helpers.c.obj	5c76b5b49793666e
+82	167	7166600759412473	tasks.exe	5bc5c92243f1aff6
+5	67	7166078599792612	CMakeFiles/tasks.dir/Task.c.obj	2e96b281202f8bff
+1	74	7166602510007857	build.ninja	66d7bdc78c152524
+2	78	7166600758559036	CMakeFiles/tasks.dir/models/task/Task.c.obj	a23fa89dabd61c39
+10	78	7166607980967441	CMakeFiles/tasks.dir/core/create_task.c.obj	1c9c3200a3739802
+7	80	7166607980987473	CMakeFiles/tasks.dir/helpers/helpers.c.obj	5c76b5b49793666e
+5	81	7166607980997461	CMakeFiles/tasks.dir/main.c.obj	9a2de5948db6327f
+2	83	7166607981017465	CMakeFiles/tasks.dir/models/task/Task.c.obj	a23fa89dabd61c39
+83	179	7166607981947438	tasks.exe	6b46b6f75edce9e
+8	80	7166610927474191	CMakeFiles/tasks.dir/core/create_task.c.obj	1c9c3200a3739802
+2	86	7166610927534189	CMakeFiles/tasks.dir/models/task/Task.c.obj	a23fa89dabd61c39
+6	98	7166610927664216	CMakeFiles/tasks.dir/main.c.obj	9a2de5948db6327f
+98	189	7166610928544177	tasks.exe	6b46b6f75edce9e
+5	68	7166614121460804	CMakeFiles/tasks.dir/core/create_task.c.obj	1c9c3200a3739802
+1	71	7166614121490816	CMakeFiles/tasks.dir/helpers/helpers.c.obj	5c76b5b49793666e
+71	157	7166614122310813	tasks.exe	6b46b6f75edce9e

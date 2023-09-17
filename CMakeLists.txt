@@ -3,4 +3,10 @@ project(tasks C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(tasks main.c)
+add_executable(tasks main.c
+        models/task/Task.h
+        models/task/Task.c
+        helpers/helpers.h
+        helpers/helpers.c
+        core/create_task.h
+        core/create_task.c)
