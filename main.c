@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <string.h>
 
 #include "models/task/Task.h"
 
@@ -17,6 +18,7 @@ void read_str(char *message, char *str) {
     fflush(stdin);
     printf("%s", message);
     fgets(str, sizeof(str), stdin);
+    str[strlen(str) - 1] = '\0';
 }
 
 void generate_menu() {
@@ -44,7 +46,25 @@ int main() {
             Task *task = init_task(task_priority, task_description, task_category);
             if (!task) exit(-1);
 
-            print_task(*task);
+            FILE *file = fopen("tasks.json", "w");
+            if (!file) {
+                printf(":: ERROR :: File not found\n");
+                exit(-1);
+            }
+
+            fprintf(file, "{");
+            fprintf(file, "\"tasks\": [");
+            fprintf(file, "{");
+            fprintf(file, "\"priority\": %d,", task->priority);
+            fprintf(file, "\"description\": \"%s\",", task->description);
+            fprintf(file, "\"category\": \"%s\"", task->category);
+            fprintf(file, "}");
+            fprintf(file, "]");
+            fprintf(file, "}");
+
+            fclose(file);
+
+            printf("Task was added successfully!\n");
         } else {
             printf(":: ERROR :: Choose a valid option, try again\n");
             continue;
