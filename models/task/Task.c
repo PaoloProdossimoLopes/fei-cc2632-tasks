@@ -15,7 +15,7 @@ int is_valid_priority(int priority) {
     return priority >= LOWER_BOUND && priority <= UPPER_BOUND;
 }
 
-Task *init_task(int priority, char description[], char category[]) {
+Task *init_task(int priority, const char description[], const char category[]) {
     if (!is_valid_priority(priority)) {
         printf(":: ERROR :: The task received an invalid priority value, must be between %d and %d", LOWER_BOUND, UPPER_BOUND);
         return NULL;
@@ -40,10 +40,13 @@ Task *init_task(int priority, char description[], char category[]) {
     return task;
 }
 
-void print_task(Task task) {
-    printf(":::: TASK ::::\n");
-    printf("Priority: %d\n", task.priority);
-    printf("Description: %s\n", task.description);
-    printf("Category: %s\n", task.category);
-    printf("==============\n");
+void print_tasks(Task tasks[], int size) {
+    printf("\n");
+    for (int i=0; i <= size; i++) {
+        printf("TASK ID: %d\n", i);
+        printf("TASK PRIORITY: %d\n",  tasks[i].priority);
+        printf("TASK DESCRIPTION: %s\n", tasks[i].description);
+        printf("TASK CATEGORY: %s\n", tasks[i].category);
+    }
+    printf("\n");
 }

@@ -7,4 +7,6 @@ add_executable(tasks main.c
         models/task/Task.h
         models/task/Task.c
         helpers/helpers.h
-        helpers/helpers.c)
+        helpers/helpers.c
+        core/create_task.h
+        core/create_task.c)

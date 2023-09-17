@@ -7,5 +7,7 @@
 
 void read_str(char *message, char *str);
 int read_int(char *message);
+int write_file(const Task task[]);
+int read_file(Task task[]);
 
 #endif //TASKS_HELPERS_H

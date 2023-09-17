@@ -8,6 +8,8 @@
 #define TASK_DESCRIPTION_SIZE 300
 #define TASK_CATEGORY_SIZE 100
 #define TOTAL_TASKS 100
+#define FILE_NAME "task"
+#define FILE_NOT_FOUND_ERROR ":: ERROR :: File not found\n"
 
 typedef struct Task {
     int priority;
@@ -15,8 +17,8 @@ typedef struct Task {
     char category[TASK_CATEGORY_SIZE];
 } Task;
 
-Task *init_task(int priority, char description[], char category[]);
+Task *init_task(int priority, const char description[], const char category[]);
 
-void print_task(Task task);
+void print_tasks(Task tasks[], int size);
 
 #endif //TASKS_TASK_H
