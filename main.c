@@ -18,6 +18,14 @@ void generate_menu() {
     printf("::::::::::::::::::::::::\n");
 }
 
+void remove_last(int index) {
+    Task *tasks[100];
+    read_file(tasks);
+    free(tasks[index]);
+    tasks[index] = NULL;
+    write_file(*tasks);
+}
+
 int main() {
     int count = 0;
     while (true) {
@@ -39,10 +47,10 @@ int main() {
             const int create_status = create_task(task_priority, task_description, task_category, count);
             if (create_status < 0) exit(create_status);
 
-            count++;
+            if (count <= TOTAL_TASKS) count++;
         } else {
-            printf(":: ERROR :: Choose a valid option, try again\n");
-            continue;
+            remove_last(count);
+            if (count >= 0) count--;
         }
     }
     return 0;

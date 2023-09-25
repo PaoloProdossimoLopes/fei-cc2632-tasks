@@ -38,7 +38,7 @@ int write_file(const Task task[]) {
     return 0;
 }
 
-int read_file(Task task[]) {
+int read_file(Task *task[]) {
     FILE *file = fopen(FILE_NAME, "rb+");
     if (!file) {
         printf("%s", FILE_NOT_FOUND_ERROR);
